@@ -1,0 +1,415 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "direction",
+  "correspondence_type",
+  "status",
+  "column_break_main",
+  "reference_no",
+  "external_reference_no",
+  "related_correspondence",
+  "section_dates",
+  "correspondence_date",
+  "received_date",
+  "registered_date",
+  "column_break_dates",
+  "due_date",
+  "closed_date",
+  "section_subject",
+  "subject",
+  "description",
+  "section_sender",
+  "sender_party_type",
+  "sender_organization",
+  "column_break_sender",
+  "sender_contact",
+  "sender_person",
+  "section_recipient",
+  "recipient_party_type",
+  "recipient_organization",
+  "column_break_recipient",
+  "recipient_contact",
+  "recipient_person",
+  "section_classification",
+  "category",
+  "sub_category",
+  "column_break_class",
+  "priority",
+  "confidentiality",
+  "section_routing",
+  "department",
+  "column_break_routing",
+  "company",
+  "section_assignments",
+  "assignments",
+  "section_related",
+  "related_documents"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "IN-.YYYY.-.#####.\nOUT-.YYYY.-.#####.\nINT-.YYYY.-.#####.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "Incoming\nOutgoing\nInternal",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "correspondence_type",
+   "fieldtype": "Select",
+   "label": "Correspondence Type",
+   "options": "Letter\nMemo\nCircular\nDecision\nRequest\nNotice\nOther",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nRegistered\nUnder Review\nReturned for Correction\nApproved\nAssigned\nIn Progress\nWaiting\nWaiting External Response\nCompleted\nSent\nClosed\nRejected\nCancelled",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "external_reference_no",
+   "fieldtype": "Data",
+   "label": "External Reference No"
+  },
+  {
+   "fieldname": "related_correspondence",
+   "fieldtype": "Link",
+   "label": "Related Correspondence",
+   "options": "Correspondence"
+  },
+  {
+   "fieldname": "section_dates",
+   "fieldtype": "Section Break",
+   "label": "Dates"
+  },
+  {
+   "default": "Today",
+   "fieldname": "correspondence_date",
+   "fieldtype": "Date",
+   "label": "Correspondence Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.direction=='Incoming'",
+   "fieldname": "received_date",
+   "fieldtype": "Date",
+   "label": "Received Date"
+  },
+  {
+   "fieldname": "registered_date",
+   "fieldtype": "Datetime",
+   "label": "Registered Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "closed_date",
+   "fieldtype": "Date",
+   "label": "Closed Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_subject",
+   "fieldtype": "Section Break",
+   "label": "Subject"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_sender",
+   "fieldtype": "Section Break",
+   "label": "Sender"
+  },
+  {
+   "fieldname": "sender_party_type",
+   "fieldtype": "Select",
+   "label": "Sender Party Type",
+   "options": "\nSupplier\nCustomer\nOrganization\nGovernment Entity\nOther"
+  },
+  {
+   "fieldname": "sender_organization",
+   "fieldtype": "Data",
+   "label": "Sender Organization"
+  },
+  {
+   "fieldname": "column_break_sender",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sender_contact",
+   "fieldtype": "Link",
+   "label": "Sender Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "sender_person",
+   "fieldtype": "Data",
+   "label": "Sender Person"
+  },
+  {
+   "fieldname": "section_recipient",
+   "fieldtype": "Section Break",
+   "label": "Recipient"
+  },
+  {
+   "fieldname": "recipient_party_type",
+   "fieldtype": "Select",
+   "label": "Recipient Party Type",
+   "options": "\nSupplier\nCustomer\nOrganization\nGovernment Entity\nOther"
+  },
+  {
+   "fieldname": "recipient_organization",
+   "fieldtype": "Data",
+   "label": "Recipient Organization"
+  },
+  {
+   "fieldname": "column_break_recipient",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recipient_contact",
+   "fieldtype": "Link",
+   "label": "Recipient Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "recipient_person",
+   "fieldtype": "Data",
+   "label": "Recipient Person"
+  },
+  {
+   "fieldname": "section_classification",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Correspondence Type"
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Data",
+   "label": "Sub Category"
+  },
+  {
+   "fieldname": "column_break_class",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nNormal\nHigh\nUrgent",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "default": "Internal",
+   "fieldname": "confidentiality",
+   "fieldtype": "Select",
+   "label": "Confidentiality",
+   "options": "Public\nInternal\nConfidential\nSecret\nTop Secret",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_routing",
+   "fieldtype": "Section Break",
+   "label": "Routing"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_routing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_assignments",
+   "fieldtype": "Section Break",
+   "label": "Department Assignments"
+  },
+  {
+   "fieldname": "assignments",
+   "fieldtype": "Table",
+   "label": "Assignments",
+   "options": "Correspondence Assignment"
+  },
+  {
+   "fieldname": "section_related",
+   "fieldtype": "Section Break",
+   "label": "Related Documents"
+  },
+  {
+   "fieldname": "related_documents",
+   "fieldtype": "Table",
+   "label": "Related Documents",
+   "options": "Correspondence Related Document"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Correspondence",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Correspondence Clerk",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Correspondence Supervisor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Correspondence Officer",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Executive Manager",
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "subject,reference_no,external_reference_no,department",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject",
+ "track_changes": 1
+}

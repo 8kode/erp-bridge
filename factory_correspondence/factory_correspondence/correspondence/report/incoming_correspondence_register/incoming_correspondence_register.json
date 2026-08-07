@@ -1,0 +1,23 @@
+{
+ "add_total_row": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "disabled": 0,
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Incoming Correspondence Register",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Correspondence",
+ "report_name": "Incoming Correspondence Register",
+ "report_type": "Script Report",
+ "roles": [
+  {"role": "Correspondence Clerk"},
+  {"role": "Correspondence Supervisor"},
+  {"role": "Executive Manager"},
+  {"role": "Auditor"},
+  {"role": "System Manager"}
+ ]
+}

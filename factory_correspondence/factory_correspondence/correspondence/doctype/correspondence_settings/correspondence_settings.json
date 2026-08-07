@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reminders",
+  "first_reminder_days",
+  "second_reminder_days",
+  "column_break_1",
+  "escalation_days",
+  "escalation_role",
+  "section_sla",
+  "sla_urgent_days",
+  "sla_high_days",
+  "column_break_2",
+  "sla_normal_days",
+  "sla_low_days",
+  "section_notifications",
+  "enable_email_notifications"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reminders",
+   "fieldtype": "Section Break",
+   "label": "Reminders & Escalation"
+  },
+  {
+   "default": "2",
+   "description": "Days before due date to send the first reminder",
+   "fieldname": "first_reminder_days",
+   "fieldtype": "Int",
+   "label": "First Reminder (days before due)"
+  },
+  {
+   "default": "0",
+   "description": "0 = on the due date",
+   "fieldname": "second_reminder_days",
+   "fieldtype": "Int",
+   "label": "Second Reminder (days before due)"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2",
+   "description": "Days after due date to escalate",
+   "fieldname": "escalation_days",
+   "fieldtype": "Int",
+   "label": "Escalation (days after due)"
+  },
+  {
+   "default": "Correspondence Supervisor",
+   "fieldname": "escalation_role",
+   "fieldtype": "Link",
+   "label": "Escalation Role",
+   "options": "Role"
+  },
+  {
+   "fieldname": "section_sla",
+   "fieldtype": "Section Break",
+   "label": "SLA Response Days by Priority"
+  },
+  {
+   "default": "2",
+   "fieldname": "sla_urgent_days",
+   "fieldtype": "Int",
+   "label": "Urgent (days)"
+  },
+  {
+   "default": "3",
+   "fieldname": "sla_high_days",
+   "fieldtype": "Int",
+   "label": "High (days)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "7",
+   "fieldname": "sla_normal_days",
+   "fieldtype": "Int",
+   "label": "Normal (days)"
+  },
+  {
+   "default": "15",
+   "fieldname": "sla_low_days",
+   "fieldtype": "Int",
+   "label": "Low (days)"
+  },
+  {
+   "fieldname": "section_notifications",
+   "fieldtype": "Section Break",
+   "label": "Notifications"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_email_notifications",
+   "fieldtype": "Check",
+   "label": "Enable Email Notifications"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Correspondence Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Correspondence Supervisor",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
